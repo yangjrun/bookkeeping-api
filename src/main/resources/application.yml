@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-boot-mybatis-xml
+  datasource:
+    jdbcUrl: jdbc:mysql://localhost:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: true
+      minimum-idle: 2
+      idle-timeout: 60000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      pool-name: DatebookHikariCP
+      maximum-pool-size: 5
+mybatis:
+  type-aliases-package: cn.yangjrun.bookkeeping.mapper
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+mapper:
+  mappers:
+    - cn.yangjrun.bookkeeping.mapper.BookKeepingMapper
+  not-empty: true
+  identity: MYSQL  # 生成id的方法
+  enable-method-annotation: true #是否可以用

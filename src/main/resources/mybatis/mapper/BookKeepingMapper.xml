@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yangjrun.bookkeeping.mapper.BookKeepingMapper" >
+
+    <resultMap id="BaseResultMap" type="cn.yangjrun.bookkeeping.entity.BookKeeping" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="time" property="time" jdbcType="TIME"/>
+        <result column="value" property="value" jdbcType="NUMERIC"/>
+        <result column="payment_type_id" property="paymentTypeId" jdbcType="INTEGER"/>
+        <result column="payment_channel_id" property="paymentChannelId" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+    <insert id="insert" parameterType="cn.yangjrun.bookkeeping.entity.BookKeeping">
+        <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid() as id from dual
+        </selectKey>
+        INSERT INTO
+        book_keeping
+        (id,time,value,payment_type_id,payment_channel_id)
+        VALUES
+        (#{id},#{time},#{value},#{paymentTypeId},#{paymentChannelId})
+    </insert>
+</mapper>
