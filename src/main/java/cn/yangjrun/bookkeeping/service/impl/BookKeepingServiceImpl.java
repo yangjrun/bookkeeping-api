@@ -1,9 +1,15 @@
 package cn.yangjrun.bookkeeping.service.impl;
 
+import cn.yangjrun.bookkeeping.dao.BookKeepingDao;
+import cn.yangjrun.bookkeeping.dto.BookKeepingDTO;
 import cn.yangjrun.bookkeeping.entity.BookKeeping;
-import cn.yangjrun.bookkeeping.mapper.BookKeepingMapper;
 import cn.yangjrun.bookkeeping.service.BookKeepingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author jirun.yang
@@ -12,15 +18,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookKeepingServiceImpl implements BookKeepingService {
 
-    private final BookKeepingMapper bookKeepingMapper;
+    private final BookKeepingDao bookKeepingDao;
 
-    public BookKeepingServiceImpl(BookKeepingMapper bookKeepingMapper){
-        this.bookKeepingMapper = bookKeepingMapper;
+    public BookKeepingServiceImpl(BookKeepingDao bookKeepingDao){
+        this.bookKeepingDao = bookKeepingDao;
     }
 
     @Override
     public void insert(BookKeeping bookKeeping){
-        bookKeepingMapper.insert(bookKeeping);
+        bookKeeping.setTime(LocalDateTime.now());
+        bookKeepingDao.insert(bookKeeping);
+    }
+
+    @Override
+    public List<BookKeepingDTO> list(){
+        return bookKeepingDao.list();
     }
 
 }

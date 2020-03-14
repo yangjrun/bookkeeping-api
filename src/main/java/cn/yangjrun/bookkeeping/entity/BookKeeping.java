@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author jirun.yang
@@ -14,7 +14,6 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table
 public class BookKeeping {
 
     public enum BookkeepingPaymentEnum{
@@ -26,9 +25,26 @@ public class BookKeeping {
     }
 
     private String id;
-    private LocalDate time;
+    /**
+     * 消费时间
+     */
+    private LocalDateTime time;
+    /**
+     * 消费金额
+     */
     private BigDecimal value;
-    private int paymentTypeId;
-    private int paymentChannelId;
+    /**
+     * 消费类型  收入，支出
+     */
+    private String paymentTypeId;
+    /**
+     * 消费渠道 微信，支付宝，银行卡
+     */
+    private String paymentChannelId;
+
+    /**
+     * 消费用途
+     */
+    private String paymentUseId;
 
 }

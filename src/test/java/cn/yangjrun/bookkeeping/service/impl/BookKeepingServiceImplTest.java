@@ -1,7 +1,7 @@
 package cn.yangjrun.bookkeeping.service.impl;
 
+import cn.yangjrun.bookkeeping.dao.BookKeepingDao;
 import cn.yangjrun.bookkeeping.entity.BookKeeping;
-import cn.yangjrun.bookkeeping.mapper.BookKeepingMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,23 +10,28 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.time.LocalDateTime;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class BookKeepingServiceImplTest {
 
     @Autowired
-    private BookKeepingMapper bookKeepingMapper;
+    private BookKeepingDao bookKeepingDao;
 
     @Test
     void insertBookKeeping() {
         BookKeeping bookKeeping = new BookKeeping();
-        bookKeeping.setTime(LocalDate.now());
+        bookKeeping.setTime(LocalDateTime.now());
         bookKeeping.setValue(new BigDecimal("60"));
-        bookKeeping.setPaymentChannelId(1);
-        bookKeeping.setPaymentTypeId(1);
-        bookKeepingMapper.insert(bookKeeping);
+        bookKeeping.setPaymentChannelId("11");
+        bookKeeping.setPaymentTypeId("111");
+        bookKeepingDao.insert(bookKeeping);
     }
+
+    @Test
+    void list(){
+        bookKeepingDao.list().forEach(bookKeeping -> System.out.println(bookKeeping));
+    }
+
 }

@@ -34,8 +34,8 @@ public class DataSourceConfiguration {
     public SqlSessionFactory dbOneSqlSessionFactory(@Qualifier("dataSource") DataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-//        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-//                .getResources("classpath:mybatis/mapper/*Mapper.xml"));
+        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
+                .getResources("classpath:mybatis/mapper/*Mapper.xml"));
         return sessionFactory.getObject();
     }
 

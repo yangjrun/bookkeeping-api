@@ -1,6 +1,9 @@
 package cn.yangjrun.bookkeeping.service;
 
+import cn.yangjrun.bookkeeping.dto.BookKeepingDTO;
 import cn.yangjrun.bookkeeping.entity.BookKeeping;
+
+import java.util.List;
 
 /**
  * @author jirun.yang
@@ -13,4 +16,10 @@ public interface BookKeepingService {
      * @param bookKeeping 记账数据
      */
     void insert(BookKeeping bookKeeping);
+
+    /**
+     * 获取所有的资金消费记录
+     * @return 资金消费记录集合
+     */
+    List<BookKeepingDTO> list();
 }
