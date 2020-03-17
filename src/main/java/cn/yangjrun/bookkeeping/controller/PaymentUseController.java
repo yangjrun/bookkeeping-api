@@ -31,9 +31,4 @@ public class PaymentUseController {
         return paymentUseService.list();
     }
 
-    public static void main(String[] args) {
-
-        new BigDecimal("中文");
-
-    }
 }

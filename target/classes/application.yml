@@ -4,9 +4,9 @@ spring:
   application:
     name: spring-boot-mybatis-xml
   datasource:
-    jdbcUrl: jdbc:mysql://localhost:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
-    username: root
-    password: 123456
+    jdbcUrl: jdbc:mysql://149.129.47.81:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+    username: bookkeeping
+    password: '!Bookkeeping123'
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
