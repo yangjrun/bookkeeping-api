@@ -7,7 +7,7 @@ spring:
     jdbcUrl: jdbc:mysql://149.129.47.81:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
     username: bookkeeping
     password: '!Bookkeeping123'
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       auto-commit: true
@@ -27,3 +27,4 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+

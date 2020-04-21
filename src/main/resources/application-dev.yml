@@ -1,10 +1,10 @@
 server:
-  port: 30000
+  port: 40000
 spring:
   application:
     name: spring-boot-mybatis-xml
   datasource:
-    jdbcUrl: jdbc:mysql://149.129.47.81:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+    jdbcUrl: jdbc:mysql://39.98.154.82:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
     username: bookkeeping
     password: '!Bookkeeping123'
     driver-class-name: com.mysql.jdbc.Driver
