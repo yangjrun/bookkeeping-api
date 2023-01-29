@@ -1,6 +1,7 @@
 package cn.yangjrun.bookkeeping.dao;
 
 import cn.yangjrun.bookkeeping.dto.BookKeepingDTO;
+import cn.yangjrun.bookkeeping.entity.AlipayBill;
 import cn.yangjrun.bookkeeping.entity.BookKeeping;
 import org.apache.ibatis.annotations.Mapper;
 

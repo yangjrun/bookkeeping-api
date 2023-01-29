@@ -8,9 +8,18 @@
         </selectKey>
         INSERT INTO
         alipay_bill
-        (id,transaction_number, merchant_order_number, transaction_creation_time, payment_time, last_modified_time, origin_of_transaction, `type`, counterpart, product_name, amount, payment_type, trading_status, service_charge, successful_refund_amount, remark, funding_status)
+        (id,transaction_number, merchant_order_number, transaction_creation_time, payment_time, last_modified_time,
+         origin_of_transaction, `type`, counterpart, product_name, amount, payment_type,
+         trading_status, service_charge, successful_refund_amount, remark, funding_status)
         VALUES
-        (#{id},#{TransactionNumber},#{MerchantOrderNumber},#{TransactionCreationTime},#{PaymentTime},#{LastModifiedTime},#{OriginOfTransaction},#{Type},#{Counterpart},#{ProductName},#{Amount},#{PaymentType},#{TradingStatus},#{ServiceCharge},#{SuccessfulRefundAmount},#{Remark},#{FundingStatus})
+        (#{id},#{TransactionNumber},#{MerchantOrderNumber},#{TransactionCreationTime},#{PaymentTime},#{LastModifiedTime},
+            #{OriginOfTransaction},#{Type},#{Counterpart},#{ProductName},#{Amount},#{PaymentType},
+            #{TradingStatus},#{ServiceCharge},#{SuccessfulRefundAmount},#{Remark},#{FundingStatus})
+        ON DUPLICATE KEY UPDATE
+        merchant_order_number=VALUES(merchant_order_number),transaction_creation_time=VALUES(transaction_creation_time),payment_time=VALUES(payment_time),
+        last_modified_time=VALUES(last_modified_time),origin_of_transaction=VALUES(origin_of_transaction),`type`=VALUES(`type`),counterpart=VALUES(counterpart),product_name=VALUES(product_name),
+        amount=VALUES(amount),payment_type=VALUES(payment_type),trading_status=VALUES(trading_status),service_charge=VALUES(service_charge),successful_refund_amount=VALUES(successful_refund_amount),
+        remark=VALUES(remark),funding_status=VALUES(funding_status)
     </insert>
 
 </mapper>

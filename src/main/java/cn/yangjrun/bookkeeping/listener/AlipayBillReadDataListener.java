@@ -20,12 +20,18 @@ import java.util.List;
 /**
  * 处理支付宝账单数据
  */
-@Service
+@Component
 public class AlipayBillReadDataListener extends AnalysisEventListener<AlipayBillDTO> {
 
+    private static  AlipayBillDao alipayBillDao;
+
+    public AlipayBillReadDataListener() {
+    }
 
     @Autowired
-    private AlipayBillDao alipayBillDao;
+    public  AlipayBillReadDataListener(AlipayBillDao alipayBillDao){
+        this.alipayBillDao = alipayBillDao;
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(AlipayBillReadDataListener.class);
 
