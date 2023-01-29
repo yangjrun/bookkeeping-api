@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yangjrun.bookkeeping.dao.AlipayBillDao" >
+
+    <insert id="insert" parameterType="cn.yangjrun.bookkeeping.entity.AlipayBill">
+        <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid() as id from dual
+        </selectKey>
+        INSERT INTO
+        alipay_bill
+        (id,transaction_number, merchant_order_number, transaction_creation_time, payment_time, last_modified_time, origin_of_transaction, `type`, counterpart, product_name, amount, payment_type, trading_status, service_charge, successful_refund_amount, remark, funding_status)
+        VALUES
+        (#{id},#{TransactionNumber},#{MerchantOrderNumber},#{TransactionCreationTime},#{PaymentTime},#{LastModifiedTime},#{OriginOfTransaction},#{Type},#{Counterpart},#{ProductName},#{Amount},#{PaymentType},#{TradingStatus},#{ServiceCharge},#{SuccessfulRefundAmount},#{Remark},#{FundingStatus})
+    </insert>
+
+</mapper>

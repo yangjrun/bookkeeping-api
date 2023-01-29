@@ -1,12 +1,12 @@
 server:
-  port: 30000
+  port: 40000
 spring:
   application:
     name: spring-boot-mybatis-xml
   datasource:
-    jdbcUrl: jdbc:mysql://149.129.47.81:3306/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
-    username: bookkeeping
-    password: '!Bookkeeping123'
+    jdbcUrl: jdbc:mysql://116.198.198.186:40003/bookkeeping?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+    username: root
+    password: '!yang15521922029'
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:

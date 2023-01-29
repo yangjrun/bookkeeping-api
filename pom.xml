@@ -106,7 +106,24 @@
             <version>4.9.79.ALL</version>
         </dependency>
 
+		<!--	读取execl工具包	-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>easyexcel</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 
+		<!--	log4f工具包	-->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.5</version>
+		</dependency>
 
     </dependencies>
 
