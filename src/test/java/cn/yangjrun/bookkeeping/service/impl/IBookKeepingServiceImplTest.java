@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class BookKeepingServiceImplTest {
+class IBookKeepingServiceImplTest {
 
     @Autowired
     private BookKeepingDao bookKeepingDao;

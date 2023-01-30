@@ -15,80 +15,81 @@ public class AlipayBill {
     /**
      * 交易号
      */
-    public String TransactionNumber;
+    private String transactionNumber;
 
     /**
      * 商家订单号
      */
-    public String MerchantOrderNumber ;
+    private String merchantOrderNumber ;
 
     /**
      * 交易创建时间
      */
-    public String TransactionCreationTime ;
+    private String transactionCreationTime ;
+
     /**
      * 付款时间
      */
-    public String PaymentTime ;
+    private String paymentTime ;
 
     /**
      * 最近修改时间 <br/>
      * 淘宝/天猫的账单修改时间是发货时间/收货时间
      */
-    public String LastModifiedTime ;
+    private String lastModifiedTime ;
 
     /**
      * 交易来源地
      */
-    public String OriginOfTransaction ;
+    private String originOfTransaction ;
 
     /**
      * 类型
      */
-    public String Type ;
+    private String type ;
 
     /**
      * 交易对方
      */
-    public String Counterpart ;
+    private String counterpart ;
 
     /**
      * 商品名称
      */
-    public String ProductName ;
+    private String productName ;
 
     /**
      * 金额
      */
-    public String Amount ;
+    private String amount ;
 
     /**
      * 支付类型
      */
-    public String PaymentType ;
+    private String paymentType ;
 
     /**
      * 交易状态
      */
-    public String TradingStatus ;
+    private String tradingStatus ;
 
     /**
      * 服务费
      */
-    public String ServiceCharge ;
+    private String serviceCharge ;
 
     /**
      * 成功退款金额
      */
-    public String SuccessfulRefundAmount ;
+    private String successfulRefundAmount ;
 
     /**
      * 备注
      */
-    public String Remark ;
+    private String remark ;
 
     /**
      * 资金状态
      */
-    public String FundingStatus ;
+    private String fundingStatus ;
 }

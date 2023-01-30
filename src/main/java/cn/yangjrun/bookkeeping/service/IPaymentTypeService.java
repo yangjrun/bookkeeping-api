@@ -8,7 +8,7 @@ import java.util.List;
  * @author jirun.yang
  * @date 2020-03-05 17:05
  **/
-public interface PaymentTypeService {
+public interface IPaymentTypeService {
 
     /**
      * 新增消费类型

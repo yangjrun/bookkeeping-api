@@ -1,7 +1,7 @@
 package cn.yangjrun.bookkeeping.controller;
 
 import cn.yangjrun.bookkeeping.entity.PaymentChannel;
-import cn.yangjrun.bookkeeping.service.PaymentChannelService;
+import cn.yangjrun.bookkeeping.service.IPaymentChannelService;
 import cn.yangjrun.bookkeeping.service.consts.ServicePathConst;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +17,9 @@ import java.util.List;
 @RequestMapping(ServicePathConst.PREFIX_SERVICE_PATH)
 public class PaymentChannelController {
 
-    private final PaymentChannelService paymentChannelService;
+    private final IPaymentChannelService paymentChannelService;
 
-    public PaymentChannelController(PaymentChannelService paymentChannelService){
+    public PaymentChannelController(IPaymentChannelService paymentChannelService){
         this.paymentChannelService = paymentChannelService;
     }
 

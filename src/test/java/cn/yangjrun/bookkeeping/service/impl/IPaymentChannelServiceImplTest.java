@@ -1,22 +1,19 @@
 package cn.yangjrun.bookkeeping.service.impl;
 
-import cn.yangjrun.bookkeeping.dao.PaymentChannelDao;
 import cn.yangjrun.bookkeeping.entity.PaymentChannel;
-import cn.yangjrun.bookkeeping.service.PaymentChannelService;
+import cn.yangjrun.bookkeeping.service.IPaymentChannelService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class PaymentChannelServiceImplTest {
+class IPaymentChannelServiceImplTest {
 
     @Autowired
-    private PaymentChannelService paymentChannelService;
+    private IPaymentChannelService paymentChannelService;
 
     @Test
     void insert() {

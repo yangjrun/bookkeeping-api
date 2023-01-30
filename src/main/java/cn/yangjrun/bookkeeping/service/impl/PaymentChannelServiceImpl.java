@@ -2,7 +2,7 @@ package cn.yangjrun.bookkeeping.service.impl;
 
 import cn.yangjrun.bookkeeping.dao.PaymentChannelDao;
 import cn.yangjrun.bookkeeping.entity.PaymentChannel;
-import cn.yangjrun.bookkeeping.service.PaymentChannelService;
+import cn.yangjrun.bookkeeping.service.IPaymentChannelService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2020-03-05 16:52
  **/
 @Service
-public class PaymentChannelServiceImpl implements PaymentChannelService {
+public class PaymentChannelServiceImpl implements IPaymentChannelService {
 
     private final PaymentChannelDao paymentChannelDao;
 

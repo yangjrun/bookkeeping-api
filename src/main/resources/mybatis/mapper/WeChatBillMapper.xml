@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yangjrun.bookkeeping.dao.WeChatBillDao" >
+
+    <insert id="insert" parameterType="cn.yangjrun.bookkeeping.entity.WeChatBill">
+        <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid() as id from dual
+        </selectKey>
+        INSERT INTO
+        wechat_bill
+        (id, transaction_creationTime, `type`, counterpart, product_name, amount, payment_type, payment_method,
+         funding_status, transaction_number, merchant_order_number, remark)
+        VALUES
+        (#{id},#{transactionCreationTime},#{type},#{counterpart},#{productName},#{amount},
+        #{paymentType},#{paymentMethod},#{fundingStatus},#{transactionNumber},#{merchantOrderNumber},#{remark})
+        ON DUPLICATE KEY UPDATE
+        transaction_creationTime=VALUES(transaction_creationTime),`type`=VALUES(`type`),counterpart=VALUES(counterpart),product_name=VALUES(product_name),amount=VALUES(amount),
+        payment_type=VALUES(payment_type),payment_method=VALUES(payment_method),funding_status=VALUES(funding_status),transaction_number=VALUES(transaction_number),
+        merchant_order_number=VALUES(merchant_order_number),remark=VALUES(remark)
+    </insert>
+
+</mapper>

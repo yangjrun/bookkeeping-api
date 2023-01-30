@@ -1,23 +1,20 @@
 package cn.yangjrun.bookkeeping.service.impl;
 
-import cn.yangjrun.bookkeeping.dao.PaymentTypeDao;
 import cn.yangjrun.bookkeeping.entity.PaymentType;
-import cn.yangjrun.bookkeeping.service.PaymentTypeService;
+import cn.yangjrun.bookkeeping.service.IPaymentTypeService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class PaymentTypeServiceImplTest {
+class IPaymentTypeServiceImplTest {
 
     @Autowired
-    private PaymentTypeService paymentTypeService;
+    private IPaymentTypeService paymentTypeService;
 
     @Test
     void insert() {

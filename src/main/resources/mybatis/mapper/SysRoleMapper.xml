@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yangjrun.bookkeeping.dao.SysRoleDao" >
+    <resultMap id="BaseResultMap" type="cn.yangjrun.bookkeeping.entity.SysRole">
+        <id column="id" property="id"/>
+        <result column="role_name" property="roleName"/>
+        <result column="role_desc" property="roleDesc"/>
+    </resultMap>
+
+    <select id="getSysRoleByIds" resultMap="BaseResultMap">
+        SELECT id, role_name, role_desc FROM bookkeeping.sys_role where id in
+        <foreach collection="ids" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>

@@ -9,7 +9,7 @@ import java.util.List;
  * @author jirun.yang
  * @date 2020-02-21 14:05
  **/
-public interface BookKeepingService {
+public interface IBookKeepingService {
 
     /**
      * 新增 记账记录

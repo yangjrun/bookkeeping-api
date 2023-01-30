@@ -1,6 +1,5 @@
 package cn.yangjrun.bookkeeping.service;
 
-import cn.yangjrun.bookkeeping.entity.PaymentType;
 import cn.yangjrun.bookkeeping.entity.PaymentUse;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
  * @author jirun.yang
  * @date 2020-03-13 09:23
  **/
-public interface PaymentUseService {
+public interface IPaymentUseService {
 
     /**
      * 新增付款用途

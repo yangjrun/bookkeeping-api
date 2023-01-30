@@ -8,7 +8,7 @@ import java.util.List;
  * @author jirun.yang
  * @date 2020-03-05 16:51
  **/
-public interface PaymentChannelService {
+public interface IPaymentChannelService {
 
     /**
      * 新增 付款渠道

@@ -12,9 +12,9 @@
          origin_of_transaction, `type`, counterpart, product_name, amount, payment_type,
          trading_status, service_charge, successful_refund_amount, remark, funding_status)
         VALUES
-        (#{id},#{TransactionNumber},#{MerchantOrderNumber},#{TransactionCreationTime},#{PaymentTime},#{LastModifiedTime},
-            #{OriginOfTransaction},#{Type},#{Counterpart},#{ProductName},#{Amount},#{PaymentType},
-            #{TradingStatus},#{ServiceCharge},#{SuccessfulRefundAmount},#{Remark},#{FundingStatus})
+        (#{id},#{transactionNumber},#{merchantOrderNumber},#{transactionCreationTime},#{paymentTime},#{lastModifiedTime},
+            #{originOfTransaction},#{type},#{counterpart},#{productName},#{amount},#{paymentType},
+            #{tradingStatus},#{serviceCharge},#{successfulRefundAmount},#{remark},#{fundingStatus})
         ON DUPLICATE KEY UPDATE
         merchant_order_number=VALUES(merchant_order_number),transaction_creation_time=VALUES(transaction_creation_time),payment_time=VALUES(payment_time),
         last_modified_time=VALUES(last_modified_time),origin_of_transaction=VALUES(origin_of_transaction),`type`=VALUES(`type`),counterpart=VALUES(counterpart),product_name=VALUES(product_name),
