@@ -1,6 +1,6 @@
 package cn.yangjrun.bookkeeping.handler.security;
 
-import cn.yangjrun.bookkeeping.commons.Response;
+import cn.yangjrun.bookkeeping.commons.Result;
 import cn.yangjrun.bookkeeping.util.ServletUtils;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
@@ -19,6 +19,6 @@ public class AccessDeny implements AccessDeniedHandler {
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException {
-        ServletUtils.render(request,response, Response.error("无权访问"));
+        ServletUtils.render(request,response, Result.error("无权访问"));
     }
 }

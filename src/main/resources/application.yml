@@ -21,7 +21,7 @@ spring:
       max-lifetime: 1800000
       pool-name: DatebookHikariCP
       maximum-pool-size: 5
-mybatis:
+mybatis-plus:
   type-aliases-package: cn.yangjrun.bookkeeping.dao
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml

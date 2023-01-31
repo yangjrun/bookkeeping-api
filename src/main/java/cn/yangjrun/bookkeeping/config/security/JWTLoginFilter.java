@@ -1,6 +1,6 @@
 package cn.yangjrun.bookkeeping.config.security;
 
-import cn.yangjrun.bookkeeping.commons.Response;
+import cn.yangjrun.bookkeeping.commons.Result;
 import cn.yangjrun.bookkeeping.dto.LoginDTO;
 import cn.yangjrun.bookkeeping.util.JwtUtils;
 import cn.yangjrun.bookkeeping.util.ServletUtils;
@@ -68,7 +68,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
                 .setAuthorities(new HashSet<>(principal.getAuthorities())));
         try {
             //登录成功時，返回json格式进行提示
-            ServletUtils.render(request,response,Response.ok(token));
+            ServletUtils.render(request,response, Result.ok(token));
         } catch (Exception e1) {
             e1.printStackTrace();
         }
@@ -108,7 +108,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
         else{
             result="未知异常";
         }
-        ServletUtils.render(request,response, Response.error(result));
+        ServletUtils.render(request,response, Result.error(result));
     }
 }
 

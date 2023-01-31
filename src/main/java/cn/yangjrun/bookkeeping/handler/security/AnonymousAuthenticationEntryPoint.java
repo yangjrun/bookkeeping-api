@@ -1,6 +1,6 @@
 package cn.yangjrun.bookkeeping.handler.security;
 
-import cn.yangjrun.bookkeeping.commons.Response;
+import cn.yangjrun.bookkeeping.commons.Result;
 import cn.yangjrun.bookkeeping.util.ServletUtils;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -19,6 +19,6 @@ public class AnonymousAuthenticationEntryPoint implements AuthenticationEntryPoi
     //未登录时返回给前端数据
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException {
-        ServletUtils.render(request,response, Response.error("需要登录"));
+        ServletUtils.render(request,response, Result.error("需要登录"));
     }
 }

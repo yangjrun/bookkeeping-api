@@ -1,6 +1,6 @@
 package cn.yangjrun.bookkeeping.config.security;
 
-import cn.yangjrun.bookkeeping.commons.Response;
+import cn.yangjrun.bookkeeping.commons.Result;
 import cn.yangjrun.bookkeeping.config.ConfigConstValue;
 import cn.yangjrun.bookkeeping.util.JwtUtils;
 import cn.yangjrun.bookkeeping.util.ServletUtils;
@@ -31,7 +31,7 @@ public class SecurityAuthTokenFilter extends BasicAuthenticationFilter {
         if(StringUtils.hasLength(token)){
             SecurityUser userInfo = JwtUtils.getUserInfoByToken(token);
             if(userInfo==null){
-                ServletUtils.render(request,response, Response.error("Token过期或无效"));
+                ServletUtils.render(request,response, Result.error("Token过期或无效"));
                 return;
             }
             if (StringUtils.hasLength(userInfo.getUsername()) &&  SecurityContextHolder.getContext().getAuthentication() == null){

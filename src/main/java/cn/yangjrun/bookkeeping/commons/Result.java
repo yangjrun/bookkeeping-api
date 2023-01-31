@@ -6,57 +6,57 @@ import java.util.Map;
 /**
  * 接口返回 module
  */
-public class Response extends HashMap<String, Object> {
+public class Result extends HashMap<String, Object> {
 
     private static final long serialVersionUID = 1L;
     private static final String STATUS = "status";
     private static final String MESSAGE = "message";
     private static final String DATA = "data";
 
-    public Response(){
+    public Result(){
         put(STATUS, 200);
         put(MESSAGE, "ok");
     }
 
-    public static Response error() {
+    public static Result error() {
         return error("500", "系统错误，请联系管理员");
     }
 
-    public static Response error(String msg) {
+    public static Result error(String msg) {
         return error("500", msg);
     }
 
-    public static Response error(String status, String msg) {
-        Response r = new Response();
+    public static Result error(String status, String msg) {
+        Result r = new Result();
         r.put(STATUS, status);
         r.put(MESSAGE, msg);
         return r;
     }
 
-    public static Response error(ApiResultEnum resultEnum) {
-        Response r = new Response();
+    public static Result error(ApiResultEnum resultEnum) {
+        Result r = new Result();
         r.put(STATUS, resultEnum.getStatus());
         r.put(MESSAGE, resultEnum.getMessage());
         return r;
     }
 
-    public static Response ok(Map<String, Object> map) {
-        Response r = new Response();
+    public static Result ok(Map<String, Object> map) {
+        Result r = new Result();
         r.putAll(map);
         return r;
     }
-    public static Response ok(Object data) {
-        Response r = new Response();
+    public static Result ok(Object data) {
+        Result r = new Result();
         r.put(DATA,data);
         return r;
     }
 
-    public static Response ok() {
-        return new Response();
+    public static Result ok() {
+        return new Result();
     }
 
     @Override
-    public Response put(String key, Object value) {
+    public Result put(String key, Object value) {
         super.put(key, value);
         return this;
     }

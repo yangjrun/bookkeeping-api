@@ -1,6 +1,6 @@
 package cn.yangjrun.bookkeeping.handler.security;
 
-import cn.yangjrun.bookkeeping.commons.Response;
+import cn.yangjrun.bookkeeping.commons.Result;
 import cn.yangjrun.bookkeeping.util.ServletUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
@@ -18,6 +18,6 @@ public class AuthenticationLogout implements LogoutSuccessHandler {
 
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
-        ServletUtils.render(request,response, Response.error("注销成功"));
+        ServletUtils.render(request,response, Result.error("注销成功"));
     }
 }
