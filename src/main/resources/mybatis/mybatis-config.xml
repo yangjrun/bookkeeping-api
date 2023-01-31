@@ -8,9 +8,7 @@
         <typeAlias alias="LinkedList" type="java.util.LinkedList" />
     </typeAliases>
     <settings>
-        <setting name="logImpl" value="LOG4J2" />
-    </settings>
-    <settings>
+<!--        <setting name="logImpl" value="LOG4J2" />-->
         <!-- 使全局的映射器启用或禁用缓存 -->
         <setting name="cacheEnabled"             value="true"   />
         <!-- 允许JDBC 支持自动生成主键 -->

@@ -1,6 +1,7 @@
 package cn.yangjrun.bookkeeping.handler.mybatis;
 
 
+import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.Properties;
@@ -15,6 +16,8 @@ import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.plugin.Signature;
+import org.springframework.beans.BeanUtils;
+
 
 /**
  * 添加时间注解拦截器,通过拦截sql，自动给带注解的属性添加时间
@@ -36,7 +39,7 @@ public class DateTimeInterceptor implements Interceptor {
         Object parameter = invocation.getArgs()[1];
 
         // 获取私有成员变量
-        Field[] declaredFields = parameter.getClass().getDeclaredFields();
+        Field[] declaredFields = parameter.getClass().getFields();
 
         for (Field field : declaredFields) {
             if (field.getAnnotation(CreateTime.class) != null) {
