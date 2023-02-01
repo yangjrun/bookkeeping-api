@@ -5,6 +5,7 @@ import cn.yangjrun.bookkeeping.entity.User;
 import cn.yangjrun.bookkeeping.service.IUserService;
 import cn.yangjrun.bookkeeping.vo.UserVO;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,9 @@ public class UserServiceImpl extends ServiceImpl<UserDao,User> implements IUserS
     @Override
     public boolean save(User user) {
         LOGGER.info("user insert parameters： {}", JSON.toJSONString(user));
-//        return userDao.save(user);
+        if(userDao.selectOne(new QueryWrapper<User>().lambda().eq(User::getUserName, user.getUserName())) != null){
+            return  false;
+        }
         userDao.insert(user);
         return true;
     }

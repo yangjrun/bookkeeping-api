@@ -8,6 +8,7 @@ import java.util.Properties;
 
 import cn.yangjrun.bookkeeping.annotation.CreateTime;
 import cn.yangjrun.bookkeeping.annotation.UpdateTime;
+import cn.yangjrun.bookkeeping.util.ObjectUtils;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -39,7 +40,7 @@ public class DateTimeInterceptor implements Interceptor {
         Object parameter = invocation.getArgs()[1];
 
         // 获取私有成员变量
-        Field[] declaredFields = parameter.getClass().getFields();
+        Field[] declaredFields = ObjectUtils.getAllFields(parameter);
 
         for (Field field : declaredFields) {
             if (field.getAnnotation(CreateTime.class) != null) {

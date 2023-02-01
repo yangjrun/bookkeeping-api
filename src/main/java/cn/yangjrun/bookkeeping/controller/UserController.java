@@ -32,8 +32,7 @@ public class UserController {
     public Result insert(@RequestBody @ApiParam(name="用户对象",value="传入json格式",required=true)UserVO userVO){
         User user = new User();
         BeanUtils.copyProperties(userVO,user);
-        userService.save(user);
-        return Result.ok();
+        return userService.save(user) ? Result.ok() : Result.error("注册失败");
     }
 
 
